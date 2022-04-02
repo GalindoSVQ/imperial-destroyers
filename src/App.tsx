@@ -1,5 +1,5 @@
-function App() {
-  return <div>Helo World</div>;
-}
+import { Router } from 'pages/Router';
+
+const App = () => <Router />;
 
 export default App;
