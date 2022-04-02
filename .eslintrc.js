@@ -10,8 +10,8 @@ module.exports = {
 		'plugin:@typescript-eslint/recommended',
 		'plugin:jsx-a11y/recommended',
 		'plugin:react-hooks/recommended',
-	  'prettier'
-  ],
+		'prettier',
+	],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		ecmaFeatures: {
@@ -28,5 +28,14 @@ module.exports = {
 		'react/react-in-jsx-scope': 'off',
 		'react/jsx-uses-react': 'error',
 		'react/jsx-uses-vars': 'error',
+		'@typescript-eslint/ban-types': [
+			'error',
+			{
+				extendDefaults: true,
+				types: {
+					'{}': false,
+				},
+			},
+		],
 	},
 };
