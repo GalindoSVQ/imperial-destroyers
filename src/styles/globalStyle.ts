@@ -1,28 +1,36 @@
-import { DefaultTheme } from 'styled-components';
+import 'styled-components';
 
 const BASE_SPACING = '1rem';
 
-const theme: DefaultTheme = {
+const theme = {
 	colors: {
+		apricot: '#FDC3D1',
+		background: '#2D313D',
+		black: '#000000',
 		blue100: '#072046',
 		blue200: '#004481',
-		black: '#000000',
 		dark10: '#010101',
-		dark50: '#050505',
 		dark100: '#121212',
 		dark200: '#666666',
 		dark300: '#717171',
+		dark50: '#050505',
+		error: '#f4c3ca',
+		green: '#48ae64',
 		light100: '#bdbdbd',
 		light200: '#d3d3d3',
 		light300: '#f4f4f4',
-		lightGray50: '#a7a7a7',
 		lightGray100: '#7d7d7d',
-		white: '#ffffff',
-		green: '#48ae64',
+		lightGray50: '#a7a7a7',
+		primary: '#F1DDE9',
 		red: '#ed6b6a',
+		secondary: '#804156',
 		success: '#d9efe0',
-		error: '#f4c3ca',
 		warning: '#ffefcf',
+		white: '#ffffff',
+	},
+	device: {
+		mobile: '(max-width: 767px)',
+		desktop: '(min-width: 767px)',
 	},
 	fonts: {
 		bold: 700,
@@ -33,6 +41,8 @@ const theme: DefaultTheme = {
 	fontSize: {
 		xs: '0.625rem',
 		small: '0.75rem',
+		medium: '1.25rem',
+		xl: '2rem',
 	},
 	spacing: {
 		s01: `calc(0.25 * ${BASE_SPACING})`,
@@ -49,6 +59,12 @@ const theme: DefaultTheme = {
 		middle: 2,
 		zero: 0,
 	},
-};
+} as const;
 
-export { theme };
+export type Theme = typeof theme;
+export default theme as Theme;
+
+declare module 'styled-components' {
+	// eslint-disable-next-line @typescript-eslint/no-empty-interface
+	export interface DefaultTheme extends Theme {}
+}
