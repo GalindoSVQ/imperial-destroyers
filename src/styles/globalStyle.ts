@@ -53,6 +53,7 @@ const theme = {
 		s06: `calc(1.5 * ${BASE_SPACING})`,
 		s07: `calc(1.75 * ${BASE_SPACING})`,
 		s08: `calc(2 * ${BASE_SPACING})`,
+		navBar: '3.5rem',
 	},
 	zIndex: {
 		top: 3,
