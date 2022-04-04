@@ -44,7 +44,17 @@ const theme = {
 		medium: '1.25rem',
 		xl: '2rem',
 	},
+	radius: {
+		xxs: '2px',
+		xs: '4px',
+		sm: '8px',
+		md: '10px',
+		lg: '16px',
+		xlg: '20px',
+	},
 	spacing: {
+		navBar: '3.5rem',
+		paddingDesktopContent: '0.5rem 1rem',
 		s01: `calc(0.25 * ${BASE_SPACING})`,
 		s02: `calc(0.5 * ${BASE_SPACING})`,
 		s03: `calc(0.75 * ${BASE_SPACING})`,
@@ -53,7 +63,6 @@ const theme = {
 		s06: `calc(1.5 * ${BASE_SPACING})`,
 		s07: `calc(1.75 * ${BASE_SPACING})`,
 		s08: `calc(2 * ${BASE_SPACING})`,
-		navBar: '3.5rem',
 	},
 	zIndex: {
 		top: 3,
