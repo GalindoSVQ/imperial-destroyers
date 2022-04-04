@@ -30,4 +30,5 @@ export const Container = styled.form`
 export const SearchInput = styled.input`
 	font-size: 1rem;
 	border: none;
+	outline: none;
 `;
