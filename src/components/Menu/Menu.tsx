@@ -1,10 +1,7 @@
 import { MENU } from 'constants/menu';
 import { Logo, MenuWrapper, NavLink } from './Menu.style';
 import DV from 'assets/icons/dv.svg';
-import { Home, People } from 'assets/icons';
-import Aircraft from 'assets/icons/Aircraft';
-import Planet from 'assets/icons/Planet';
-import Train from 'assets/icons/Train';
+import { Aircraft, Home, People, Planet, Train } from 'assets/icons';
 
 export const menuRoutes = [
 	{
