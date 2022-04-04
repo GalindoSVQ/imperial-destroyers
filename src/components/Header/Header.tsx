@@ -13,7 +13,7 @@ const Header = () => {
 		<Container>
 			<Head>
 				<Titles>
-					<h2>Imperial destroyers center</h2>
+					<h2>Imperial Destroyers Center</h2>
 					<h1>{title}</h1>
 				</Titles>
 				<User>
