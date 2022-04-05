@@ -19,18 +19,12 @@ const Select = ({ options, onChange, selected }: Props) => {
 	return (
 		<Container>
 			<Sort />
-			<SelectElement name="select" onChange={changeMonthHandler}>
-				{options.map((option) => {
-					return (
-						<option
-							key={option}
-							value={option.toLocaleLowerCase()}
-							selected={option === selected}
-						>
-							{option}
-						</option>
-					);
-				})}
+			<SelectElement name="select" onChange={changeMonthHandler} value={selected}>
+				{options.map((option) => (
+					<option key={option} value={option.toLocaleLowerCase()}>
+						{option}
+					</option>
+				))}
 			</SelectElement>
 		</Container>
 	);

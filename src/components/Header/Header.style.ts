@@ -20,13 +20,14 @@ const Head = styled.div`
 	align-items: flex-start;
 `;
 
-const User = styled.div`
+const UserActions = styled.div`
 	display: flex;
 	flex-flow: row nowrap;
 	gap: ${({ theme }) => theme.spacing.s04};
 
 	& svg {
 		width: ${({ theme }) => theme.spacing.s05};
+		cursor: pointer;
 	}
 `;
 
@@ -45,4 +46,4 @@ const Titles = styled.div`
 	}
 `;
 
-export { Container, Head, Titles, User };
+export { Container, Head, Titles, UserActions };
