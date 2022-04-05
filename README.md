@@ -7,7 +7,7 @@ List of technologies used in the project
 - [Styled-Components](https://github.com/styled-components/styled-components) Styles CSS
 - [React Router](https://reactrouter.com/) Client-side routing
 
-# Getting Started with Create React App
+# Getting Started
 
 This project was bootstrapped with [Vite](https://vitejs.dev/).
 
