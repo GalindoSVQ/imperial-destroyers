@@ -22,6 +22,9 @@ In the project directory, you can run:
 # TODO
 
 - [x] Fetch data
+- [ ] Add pagination
+- [ ] Planet Page
 - [ ] Search
 - [ ] Filter elements by selector
+- [ ] Tests
 - [ ] Create fake login
