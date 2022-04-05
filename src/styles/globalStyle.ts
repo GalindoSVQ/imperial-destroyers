@@ -6,6 +6,7 @@ const theme = {
 	colors: {
 		apricot: '#FDC3D1',
 		background: '#2D313D',
+		backgroundCard: '#40444f',
 		black: '#000000',
 		blue100: '#072046',
 		blue200: '#004481',

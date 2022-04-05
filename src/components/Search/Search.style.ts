@@ -10,7 +10,7 @@ export const Container = styled.form`
 	flex-flow: row nowrap;
 	font-weight: ${({ theme }) => theme.fonts.medium};
 	gap: 0.5rem;
-	height: 1rem;
+	max-height: 1rem;
 	justify-content: flex-start;
 	padding: ${({ theme }) => theme.spacing.s02} ${({ theme }) => theme.spacing.s04};
 	width: 250px;
@@ -31,4 +31,8 @@ export const SearchInput = styled.input`
 	font-size: 1rem;
 	border: none;
 	outline: none;
+
+	@media ${({ theme }) => theme.device.mobile} {
+		width: 80%;
+	}
 `;

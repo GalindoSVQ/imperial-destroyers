@@ -14,11 +14,12 @@ export const Container = styled.div`
 	}
 `;
 
-export const Select = styled.select`
+export const SelectElement = styled.select`
 	width: 250px;
 	border-radius: ${({ theme }) => theme.radius.xs};
 	box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.5);
 	color: ${({ theme }) => theme.colors.secondary};
 	height: 2rem;
 	font-size: 1rem;
+	padding-left: ${({ theme }) => theme.spacing.s03};
 `;

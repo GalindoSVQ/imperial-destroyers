@@ -13,8 +13,8 @@ export const Router = () => {
 
 	return (
 		<BrowserRouter>
-			<Layout>
-				<Suspense fallback={<Splash />}>
+			<Suspense fallback={<Splash />}>
+				<Layout>
 					<Routes>
 						<Route path={MENU.HOME.PATH} element={<Home />} />
 						<Route path={MENU.PLANETS.PATH} element={<Planets />} />
@@ -22,8 +22,8 @@ export const Router = () => {
 						<Route path={MENU.PEOPLE.PATH} element={<People />} />
 						<Route path={MENU.VEHICLES.PATH} element={<Vehicles />} />
 					</Routes>
-				</Suspense>
-			</Layout>
+				</Layout>
+			</Suspense>
 		</BrowserRouter>
 	);
 };

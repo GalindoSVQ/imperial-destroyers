@@ -20,22 +20,14 @@ const Head = styled.div`
 	align-items: flex-start;
 `;
 
-const Interactions = styled.div`
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: flex-start;
-	align-items: center;
-	gap: ${({ theme }) => theme.spacing.s08};
-	height: 2.5rem;
-`;
-
-const User = styled.div`
+const UserActions = styled.div`
 	display: flex;
 	flex-flow: row nowrap;
 	gap: ${({ theme }) => theme.spacing.s04};
 
 	& svg {
 		width: ${({ theme }) => theme.spacing.s05};
+		cursor: pointer;
 	}
 `;
 
@@ -54,4 +46,4 @@ const Titles = styled.div`
 	}
 `;
 
-export { Container, Head, Interactions, Titles, User };
+export { Container, Head, Titles, UserActions };
