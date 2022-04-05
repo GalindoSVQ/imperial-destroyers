@@ -2,7 +2,7 @@
 
 [Deploy](https://imperial-destroyers.vercel.app)
 
-List of technologies used in the project
+Dependencies used
 
 - [Styled-Components](https://github.com/styled-components/styled-components) Styles CSS
 - [React Router](https://reactrouter.com/) Client-side routing
@@ -24,7 +24,7 @@ In the project directory, you can run:
 - [x] Fetch data
 - [x] Add pagination
 - [ ] Planet Page
-- [ ] Search
+- [x] Search
 - [ ] Filter elements by selector
 - [ ] Tests
 - [ ] Create fake login

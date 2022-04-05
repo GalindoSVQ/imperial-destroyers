@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 const Container = styled.article<{ width: number }>`
-	display: flex;
-	flex-flow: column nowrap;
-	width: ${({ width }) => width}px;
-	height: 280px;
+	background-color: ${({ theme }) => theme.colors.backgroundCard};
 	box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
 		0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-	background-color: ${({ theme }) => theme.colors.backgroundCard};
 	color: ${({ theme }) => theme.colors.light300};
+	display: flex;
+	flex-flow: column nowrap;
+	height: 280px;
+	width: ${({ width }) => width}px;
 
 	@media ${({ theme }) => theme.device.mobile} {
 		width: 100%;
@@ -16,12 +16,13 @@ const Container = styled.article<{ width: number }>`
 `;
 
 const Img = styled.div<{ src?: string }>`
-	background-color: ${({ theme }) => theme.colors.light100};
 	${({ src }) => src && `background-image: url(${src});`}
+	background-color: ${({ theme }) => theme.colors.light100};
 	background-position: center;
 	background-size: cover;
-	width: 100%;
+	flex: 1.5;
 	height: 7rem;
+	width: 100%;
 
 	@media ${({ theme }) => theme.device.mobile} {
 		height: 9rem;
@@ -29,13 +30,15 @@ const Img = styled.div<{ src?: string }>`
 `;
 
 const CardContent = styled.div`
+	flex: 1;
 	padding: 0.5rem;
 `;
 
 const CardActions = styled.div`
-	margin-top: 1rem;
 	display: flex;
+	flex: 0.5;
 	gap: 1rem;
+	margin-top: 1rem;
 `;
 
 const Name = styled.h3`
