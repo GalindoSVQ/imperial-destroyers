@@ -1,9 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import { capitalize } from 'utils';
-import { Search } from 'components/Search';
 import { Bell, UserIcon } from 'assets/icons';
-import { Container, Head, Interactions, User, Titles } from './Header.style';
-import { PlanetSelect } from 'components/PlanetSelect';
+import { Container, Head, User, Titles } from './Header.style';
 
 const Header = () => {
 	const { pathname } = useLocation();
@@ -21,10 +19,6 @@ const Header = () => {
 					<UserIcon />
 				</User>
 			</Head>
-			<Interactions>
-				<Search />
-				<PlanetSelect />
-			</Interactions>
 		</Container>
 	);
 };
