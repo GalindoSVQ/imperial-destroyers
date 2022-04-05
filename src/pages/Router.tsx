@@ -1,29 +1,22 @@
 import { Layout } from 'components/Layout';
-import { Splash } from 'components/Splash';
 import { MENU } from 'constants/menu';
-import { lazy, Suspense } from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import Home from './Home';
+import People from './People';
+import Planets from './Planets';
+import Starships from './Starships';
+import Vehicles from './Vehicles';
 
-export const Router = () => {
-	const Home = lazy(() => import('./Home'));
-	const Planets = lazy(() => import('./Planets'));
-	const Starships = lazy(() => import('./Starships'));
-	const People = lazy(() => import('./People'));
-	const Vehicles = lazy(() => import('./Vehicles'));
-
-	return (
-		<BrowserRouter>
-			<Suspense fallback={<Splash />}>
-				<Layout>
-					<Routes>
-						<Route path={MENU.HOME.PATH} element={<Home />} />
-						<Route path={MENU.PLANETS.PATH} element={<Planets />} />
-						<Route path={MENU.STARSHIPS.PATH} element={<Starships />} />
-						<Route path={MENU.PEOPLE.PATH} element={<People />} />
-						<Route path={MENU.VEHICLES.PATH} element={<Vehicles />} />
-					</Routes>
-				</Layout>
-			</Suspense>
-		</BrowserRouter>
-	);
-};
+export const Router = () => (
+	<BrowserRouter>
+		<Layout>
+			<Routes>
+				<Route path={MENU.HOME.PATH} element={<Home />} />
+				<Route path={MENU.PLANETS.PATH} element={<Planets />} />
+				<Route path={MENU.STARSHIPS.PATH} element={<Starships />} />
+				<Route path={MENU.PEOPLE.PATH} element={<People />} />
+				<Route path={MENU.VEHICLES.PATH} element={<Vehicles />} />
+			</Routes>
+		</Layout>
+	</BrowserRouter>
+);
