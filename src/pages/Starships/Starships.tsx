@@ -5,6 +5,7 @@ import { Interactions } from 'styles';
 import { useStarships } from './hooks/useStarships';
 import { Section } from './Starships.style';
 import { Card } from 'components/Card';
+import { getImageUrl } from 'utils';
 
 const Starships = () => {
 	const { starships, sortByValues, error, loading, currentSortBy, setCurrentSortBy } = useStarships();
@@ -28,7 +29,7 @@ const Starships = () => {
 						<Card
 							key={starship.name}
 							name={starship.name}
-							imgUrl={''}
+							imgUrl={getImageUrl('starships', starship.name)}
 							description={starship.manufacturer}
 						/>
 					))}

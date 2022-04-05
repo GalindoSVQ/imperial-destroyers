@@ -15,4 +15,8 @@ export const Section = styled.section`
 	gap: ${({ theme }) => theme.spacing.s04};
 	flex-flow: row wrap;
 	justify-content: space-between;
+
+	@media ${({ theme }) => theme.device.mobile} {
+		justify-content: space-around;
+	}
 `;

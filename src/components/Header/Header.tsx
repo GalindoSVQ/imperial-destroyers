@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
-import { capitalize } from 'utils';
 import { Bell, UserIcon } from 'assets/icons';
 import { Container, Head, UserActions, Titles } from './Header.style';
+import { capitalize } from 'utils';
 
 const Header = () => {
 	const { pathname } = useLocation();
