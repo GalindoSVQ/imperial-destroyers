@@ -12,6 +12,7 @@ const Main = styled.div`
 	flex: 1;
 	padding: ${({ theme }) => theme.spacing.paddingDesktopContent};
 	background-color: ${({ theme }) => theme.colors.background};
+	max-height: 100%;
 
 	@media ${({ theme }) => theme.device.mobile} {
 		padding-bottom: calc(${({ theme }) => theme.spacing.navBar} + 3rem);
@@ -20,7 +21,7 @@ const Main = styled.div`
 
 const Wrapper = styled.div`
 	display: flex;
-	height: 100vh;
+	flex-flow: row nowrap;
 `;
 
 export { Content, Main, Wrapper };
