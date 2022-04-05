@@ -40,13 +40,12 @@ export function useFetch<T = unknown>(url?: string): State<T> {
 
 			try {
 				const response = await fetch(url);
+
 				if (!response.ok) {
 					throw new Error(response.statusText);
 				}
 
 				const data = (await response.json()) as T;
-
-				if (isShow.current) return;
 
 				dispatch({ type: 'fetched', payload: data });
 			} catch (error) {
