@@ -22,9 +22,14 @@ In the project directory, you can run:
 # TODO
 
 - [x] Fetch data
-- [ ] Add pagination
+- [x] Add pagination
 - [ ] Planet Page
 - [ ] Search
 - [ ] Filter elements by selector
 - [ ] Tests
 - [ ] Create fake login
+- [ ] Add image placeholders
+
+# KNOWN BUG
+
+- [ ] Improve image retrieval and handling
