@@ -8,7 +8,7 @@ interface State<T> {
 
 type Action<T> = { type: 'loading' } | { type: 'fetched'; payload: T } | { type: 'error'; payload: Error };
 
-export function useFetch<T = unknown>(url?: string): State<T> {
+export function useFetch<T>(url?: string): State<T> {
 	const isShow = useRef<boolean>(false);
 
 	const initialState: State<T> = {

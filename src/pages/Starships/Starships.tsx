@@ -1,23 +1,28 @@
-import { Select } from 'components/Select';
-import { Search } from 'components/Search';
-import { Card } from 'components/Card';
-import { capitalize, getImageUrl, getItemsPerPage, starshipsResponseBuilder } from 'utils';
-import useCounter from 'hooks/useCounter';
-import { useSearchStarships, useStarships } from './hooks';
-import { Interactions } from 'styles';
-import { Section, Pagination } from './Starships.style';
-import { STARSHIP_CATEGORIES } from 'constants/starships';
+import { useState } from 'react';
+import { API } from 'constants/api';
+import { StarshipCategories, STARSHIP_CATEGORIES } from 'constants/app';
+import Starship from 'models/Starship';
+import { useCounter, useFetch, useSearch } from 'hooks';
+import { Card, Search, Select } from 'components';
+import { capitalize, getImageUrl, getItemsPerPage, ResponseType, starshipsResponseBuilder } from 'utils';
+import { Interactions, Pagination, Section } from 'styles';
 
-const Starships = () => {
-	const { count: page, increment: incrementPage, decrement: decrementPage } = useCounter(1);
-	const { selectedCategory, fetchError, fetchLoading, fetchStarships, setSelectedCategory, totalItemsFetched } =
-		useStarships(page);
-	const { totalItemsSearched, searchError, searchLoading, searchStarships, searchValue, setsearchValue } =
-		useSearchStarships();
+function Starships() {
+	const { count: page, increment, decrement } = useCounter(1);
+	const [selectedCategory, setSelectedCategory] = useState<StarshipCategories>(STARSHIP_CATEGORIES[0]);
+	const fetchState = useFetch<ResponseType<Starship>>(`${API.BASE_URL}${API.STARSHIPS}?page=${page}`);
 
-	const allItemCounter = searchValue ? totalItemsSearched : totalItemsFetched;
+	const { data, error: fetchError, loading: fetchLoading } = fetchState;
+	const totalItemsFetched = data?.count ?? 0;
+	const fetchResponse = data?.results ?? [];
+
+	const { totalItems, searchError, searchLoading, searchResponse, searchValue, setsearchValue } = useSearch(
+		API.STARSHIPS,
+	);
+
+	const allItemCounter = searchValue ? totalItems : totalItemsFetched;
 	const { start, end } = getItemsPerPage(allItemCounter, page);
-	const responses = !!searchValue ? searchStarships : fetchStarships;
+	const responses = !!searchValue ? (searchResponse as Starship[]) : fetchResponse;
 	const starshipsResponse = starshipsResponseBuilder(responses, selectedCategory);
 
 	if (fetchError || searchError) {
@@ -52,12 +57,12 @@ const Starships = () => {
 					{allItemCounter > 10 && (
 						<Pagination>
 							<div>
-								<button onClick={decrementPage} disabled={page === 1}>
+								<button onClick={decrement} disabled={page === 1}>
 									&lt;
 								</button>
 								{start} to {end} of {allItemCounter} Starships
 								<button
-									onClick={incrementPage}
+									onClick={increment}
 									disabled={end === allItemCounter}
 								>
 									&gt;
@@ -70,6 +75,6 @@ const Starships = () => {
 			)}
 		</>
 	);
-};
+}
 
 export { Starships };

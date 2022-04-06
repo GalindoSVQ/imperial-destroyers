@@ -1,6 +1,5 @@
 export * from './Aircraft';
 export * from './Bell';
-export * from './Home';
 export * from './Login';
 export * from './People';
 export * from './Planet';

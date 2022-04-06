@@ -12,7 +12,7 @@ type Props<Value> = {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const isAllowed = (v: any): v is Allowed => typeof v === 'string' || typeof v === 'number';
+const isAllowed = (v: any): v is Allowed => typeof v === 'string';
 
 function Select<Value>({ value, onChange, options, mapOptionToLabel, mapOptionToValue }: Props<Value>) {
 	const toLabel = (option: Value): Allowed => {

@@ -1,9 +1,10 @@
+import { PlanetCategories, StarshipCategories } from 'constants/app';
+import Planet from 'models/Planet';
 import Starship from 'models/Starship';
-import { StarshipCategories } from 'utils';
 
 const capitalize = (word: string) => word.charAt(0).toUpperCase() + word.slice(1);
 
-const getImageUrl = (model: 'starships', starshipName: string) =>
+const getImageUrl = (model: 'starships' | 'planets', starshipName: string) =>
 	new URL(`../assets/images/${model}/${starshipName}.png`, import.meta.url).href;
 
 const getItemsPerPage = (count: number, currentPage: number) => {
@@ -38,4 +39,19 @@ const starshipsResponseBuilder = (starships: Starship[], currentSortBy: Starship
 	return startshipsSorted;
 };
 
-export { capitalize, getImageUrl, getItemsPerPage, starshipsResponseBuilder };
+const planetsResponseBuilder = (starships: Planet[], currentSortBy: PlanetCategories) => {
+	const enumCategories: Record<PlanetCategories, keyof Planet> = {
+		name: 'name',
+		diameter: 'diameter',
+	};
+
+	const startshipsSorted = starships.sort((a, b) => {
+		const starshipKey = enumCategories[currentSortBy];
+
+		return a[starshipKey] < b[starshipKey] ? -1 : 1;
+	});
+
+	return startshipsSorted;
+};
+
+export { capitalize, getImageUrl, getItemsPerPage, planetsResponseBuilder, starshipsResponseBuilder };

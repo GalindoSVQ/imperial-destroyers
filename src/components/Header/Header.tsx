@@ -5,7 +5,7 @@ import { capitalize } from 'utils';
 
 const Header = () => {
 	const { pathname } = useLocation();
-	const title = capitalize(pathname.split('/')[1]) || 'Home';
+	const title = capitalize(pathname.split('/')[1]);
 
 	return (
 		<Container>

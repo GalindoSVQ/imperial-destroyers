@@ -21,4 +21,4 @@ const Navbar = () => (
 	</NavigationBar>
 );
 
-export default Navbar;
+export { Navbar };

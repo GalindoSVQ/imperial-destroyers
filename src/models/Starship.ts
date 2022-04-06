@@ -18,10 +18,3 @@ export default interface Starship {
 	starship_class: string;
 	url: string;
 }
-
-export type StarshipResponse = {
-	count: number;
-	next: string | null;
-	previous: string | null;
-	results: Starship[];
-};

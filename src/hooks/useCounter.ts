@@ -24,4 +24,4 @@ function useCounter(initialValue?: number): ReturnType {
 	};
 }
 
-export default useCounter;
+export { useCounter };
