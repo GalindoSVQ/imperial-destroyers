@@ -18,4 +18,15 @@ const Interactions = styled.div`
 	}
 `;
 
-export { Interactions };
+const Section = styled.section`
+	display: flex;
+	gap: ${({ theme }) => theme.spacing.s04};
+	flex-flow: row wrap;
+	justify-content: flex-start;
+
+	@media ${({ theme }) => theme.device.mobile} {
+		justify-content: space-around;
+	}
+`;
+
+export { Interactions, Section };

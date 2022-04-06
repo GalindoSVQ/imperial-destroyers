@@ -1,4 +1,4 @@
-import { Layout } from 'components/Layout';
+import { Layout } from 'components';
 import { MENU } from 'constants/menu';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Home from './Home';

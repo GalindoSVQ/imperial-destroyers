@@ -1,12 +1,10 @@
-import { Select } from 'components/Select';
-import { Search } from 'components/Search';
-import { Card } from 'components/Card';
 import { capitalize, getImageUrl, getItemsPerPage, starshipsResponseBuilder } from 'utils';
-import useCounter from 'hooks/useCounter';
+import { Card, Search, Select } from 'components';
 import { useSearchStarships, useStarships } from './hooks';
-import { Interactions } from 'styles';
-import { Section, Pagination } from './Starships.style';
 import { STARSHIP_CATEGORIES } from 'constants/starships';
+import { Interactions } from 'styles';
+import { Pagination, Section } from './Starships.style';
+import { useCounter } from 'hooks';
 
 const Starships = () => {
 	const { count: page, increment: incrementPage, decrement: decrementPage } = useCounter(1);
