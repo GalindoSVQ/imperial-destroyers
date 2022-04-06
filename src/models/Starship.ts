@@ -1,22 +1,22 @@
 export default interface Starship {
-	name: string;
-	model: string;
-	starship_class: string;
-	manufacturer: string;
-	cost_in_credits: string;
-	length: string;
-	crew: string;
-	passengers: string;
-	max_atmosphering_speed: string;
-	hyperdrive_rating: string;
-	MGLT: string;
 	cargo_capacity: string;
 	consumables: string;
-	films: string[];
-	pilots: string[];
-	url: string;
+	cost_in_credits: string;
 	created: string;
+	crew: string;
 	edited: string;
+	films: string[];
+	hyperdrive_rating: string;
+	length: string;
+	manufacturer: string;
+	max_atmosphering_speed: string;
+	MGLT: string;
+	model: string;
+	name: string;
+	passengers: string;
+	pilots: string[];
+	starship_class: string;
+	url: string;
 }
 
 export type StarshipResponse = {

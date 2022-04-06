@@ -17,7 +17,7 @@ export function useSearchStarships() {
 	}, [data]);
 
 	return {
-		searchData: data,
+		totalItemsSearched: data?.count ?? 0,
 		searchError: error,
 		searchLoading: loading,
 		searchStarships,
