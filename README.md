@@ -23,7 +23,7 @@ In the project directory, you can run:
 
 - [x] Fetch data
 - [x] Add pagination
-- [ ] Planet Page
+- [x] Planet Page
 - [x] Search
 - [x] Sort elements by category
 - [ ] Tests
