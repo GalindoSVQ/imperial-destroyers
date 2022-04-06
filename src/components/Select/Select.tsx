@@ -1,33 +1,52 @@
 import { Sort } from 'assets/icons';
-import { ChangeEvent, useCallback } from 'react';
 import { Container, SelectElement } from './Select.style';
 
-type Props = {
-	options: string[];
-	onChange: (value: string) => void;
-	selected: string;
+type Allowed = string;
+
+type Props<Value> = {
+	value: Value;
+	onChange: (newValue: Value) => void;
+	options: readonly Value[];
+	mapOptionToLabel?: (option: Value) => Allowed;
+	mapOptionToValue?: (option: Value) => Allowed;
 };
 
-const Select = ({ options, onChange, selected }: Props) => {
-	const changeMonthHandler = useCallback(
-		(event: ChangeEvent<HTMLSelectElement>) => {
-			onChange(event.target.value);
-		},
-		[onChange],
-	);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const isAllowed = (v: any): v is Allowed => typeof v === 'string' || typeof v === 'number';
+
+function Select<Value>({ value, onChange, options, mapOptionToLabel, mapOptionToValue }: Props<Value>) {
+	const toLabel = (option: Value): Allowed => {
+		if (mapOptionToLabel) {
+			return mapOptionToLabel(option);
+		}
+
+		return isAllowed(option) ? option : String(option);
+	};
+
+	const toValue = (option: Value): Allowed => {
+		if (mapOptionToValue) {
+			return mapOptionToValue(option);
+		}
+
+		return isAllowed(option) ? option : String(option);
+	};
+
+	const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+		onChange(options[e.target.selectedIndex]);
+	};
 
 	return (
 		<Container>
 			<Sort />
-			<SelectElement name="select" onChange={changeMonthHandler} value={selected}>
-				{options.map((option) => (
-					<option key={option} value={option.toLocaleLowerCase()}>
-						{option}
+			<SelectElement value={toValue(value)} onChange={handleChange}>
+				{options.map((value) => (
+					<option value={toValue(value)} key={toValue(value)}>
+						{toLabel(value)}
 					</option>
 				))}
 			</SelectElement>
 		</Container>
 	);
-};
+}
 
 export { Select };
