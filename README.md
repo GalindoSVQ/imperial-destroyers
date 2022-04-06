@@ -25,7 +25,7 @@ In the project directory, you can run:
 - [x] Add pagination
 - [ ] Planet Page
 - [x] Search
-- [ ] Filter elements by selector
+- [x] Sort elements by category
 - [ ] Tests
 - [ ] Create fake login
 - [ ] Add image placeholders
@@ -33,3 +33,4 @@ In the project directory, you can run:
 # KNOWN BUG
 
 - [ ] Improve image retrieval and handling
+- [ ] Handle kind of field formatting for sorting
