@@ -3,14 +3,13 @@ module.exports = {
 		browser: true,
 		es2021: true,
 		node: true,
-		jest: true,
 	},
 	extends: [
 		'eslint:recommended',
 		'plugin:react/recommended',
-		'plugin:@typescript-eslint/recommended',
-		'plugin:jsx-a11y/recommended',
 		'plugin:react-hooks/recommended',
+		'plugin:jsx-a11y/recommended',
+		'plugin:@typescript-eslint/recommended',
 		'prettier',
 	],
 	parser: '@typescript-eslint/parser',
@@ -38,5 +37,10 @@ module.exports = {
 				},
 			},
 		],
+	},
+	settings: {
+		react: {
+			version: 'detect',
+		},
 	},
 };
