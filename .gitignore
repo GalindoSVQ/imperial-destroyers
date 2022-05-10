@@ -24,3 +24,4 @@ directions
 *.sln
 *.sw?
 .eslintcache
+coverage
