@@ -1,10 +1,17 @@
-import { render } from '@testing-library/react';
 import { Header } from '../Header';
+import { expect, it, describe, vi } from 'vitest';
+import { render, screen } from 'utils/test-utils';
 
 describe('<Header />', () => {
-	test('should disrender component', () => {
-		const component = render(<Header />);
+	vi.mock('react-router-dom', () => ({
+		...vi.importActual('react-router-dom'),
+		useLocation: () => ({
+			pathname: '/pages/Planets',
+		}),
+	}));
 
-		component.getByText('Imperial destroyers center');
+	it('the title is visible', () => {
+		render(<Header />);
+		expect(screen.getByText(/Imperial Destroyers Center/i)).toBeInTheDocument();
 	});
 });
