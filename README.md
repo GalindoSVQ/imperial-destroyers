@@ -6,6 +6,7 @@ Dependencies used
 
 - [Styled-Components](https://github.com/styled-components/styled-components) Styles CSS
 - [React Router](https://reactrouter.com/) Client-side routing
+- [Vitest](https://vitest.dev/) A blazing fast unit-test framework powered by Vite ⚡️
 
 # Getting Started
 
